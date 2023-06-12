@@ -1,9 +1,5 @@
-import express from 'express'
-import http from 'http'
-import cors from 'cors'
+import makeApp from './config/makeApp'
 
-const app = express()
+const { app, server, pgClient } = makeApp()
 
-app.use(cors()) // Add cors middleware
-
-const server = http.createServer(app)
+export { app, server, pgClient }

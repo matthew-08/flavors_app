@@ -3,6 +3,7 @@ const appEnv = {
     pgUser: process.env.PG_USER,
     pgPassword: process.env.PG_PASSWORD,
     pgHost: process.env.PG_HOST,
+    appPort: process.env.APP_PORT,
 }
 
 export default appEnv

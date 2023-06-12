@@ -1,6 +1,10 @@
 import { Request, Response } from 'express'
+import { getAllCategoriesService } from '../service/category.service'
 
-const getCategoriesHandler = (req: Request, res: Response) => {}
+const getCategoriesHandler = async (req: Request, res: Response) => {
+    const categories = await getAllCategoriesService()
+    return res.status(200).send(categories)
+}
 
 const getCategoryFlavorsHandler = (req: Request, res: Response) => {}
 

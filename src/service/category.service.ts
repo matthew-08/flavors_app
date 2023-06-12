@@ -19,7 +19,19 @@ const getCategoryIdService = async (categoryName: string) => {
         `,
             [categoryName]
         )
-    ).rows[0].id
+    ).rows[0].id as string
 }
+
+const getAllCategoriesService = async () => {
+    return (
+        await pgClient.query(
+            `
+        SELECT * from flavor_category
+        `
+        )
+    ).rows
+}
+
+export { getAllCategoriesService }
 
 export { insertCategoryService, getCategoryIdService }
