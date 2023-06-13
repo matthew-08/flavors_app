@@ -1,4 +1,4 @@
-import pgClient from '../db/db'
+import { pgClient } from '..'
 
 const insertCategoryService = async (categoryName: string) => {
     return await pgClient.query(
@@ -32,6 +32,20 @@ const getAllCategoriesService = async () => {
     ).rows
 }
 
-export { getAllCategoriesService }
+const getCategoryFlavorsService = async (catId: number) => {
+    return (
+        await pgClient.query(
+            `
+            SELECT * from flavor WHERE flavor_category=$1
+            `,
+            [catId]
+        )
+    ).rows
+}
 
-export { insertCategoryService, getCategoryIdService }
+export {
+    getCategoryFlavorsService,
+    insertCategoryService,
+    getCategoryIdService,
+    getAllCategoriesService,
+}

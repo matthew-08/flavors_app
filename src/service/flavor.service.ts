@@ -1,4 +1,4 @@
-import pgClient from '../db/db'
+import { pgClient } from '..'
 
 const insertFlavorService = async (
     flavor: string,

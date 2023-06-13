@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv'
+dotenv.config()
+
 const appEnv = {
     pgDatabase: process.env.PG_DATABASE,
     pgUser: process.env.PG_USER,
