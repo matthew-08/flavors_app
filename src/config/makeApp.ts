@@ -8,7 +8,6 @@ import createDb from '../db/db'
 const makeApp = () => {
     const app = express()
     applyMiddleware(app)
-
     const pgClient = createDb()
     const server = http.createServer(app)
 

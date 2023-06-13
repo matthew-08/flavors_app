@@ -10,4 +10,6 @@ const QuoteSchema = z.object({
     }),
 })
 
+export type PostQuoteInput = z.infer<typeof QuoteSchema>['body']
+
 export default QuoteSchema
